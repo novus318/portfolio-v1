@@ -8,10 +8,10 @@ const Grid = () => {
   const gridItems = [
     {
       id: 1,
-      title: "I am passionate about creating customised solutions for my client.",
+      title: "Think different. Build better.",
       description: "",
       className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh] min-h-[25vh]",
-      imgClassName: "w-full h-full",
+      imgClassName: "w-full h-full opacity-75",
       titleClassName: "justify-end max-w-[70%] mt-16 md:mt-0 md:justify-end md:max-w-[75%]",
       img: theme === "dark" ? "/1.png" : "/2.png",
       spareImg: "",
@@ -48,7 +48,7 @@ const Grid = () => {
     },
   ];
   return (
-    <section id="about" className="px-4 md:px-8 lg:px-20">
+    <section id="skills" className="px-4 md:px-8 lg:px-20">
       <BentoGrid className="w-full py-10">
         {gridItems.map((item, i) => (
           <BentoGridItem

@@ -49,7 +49,7 @@ export default async function RootLayout({
     (initialTheme === "system" && false); // Update this to use system preference
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
            <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

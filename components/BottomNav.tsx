@@ -8,27 +8,31 @@ import { cn } from "@/lib/utils"
 const navItems = [
   {
     name: "Home",
-    href: "/",
+    href: "#",
     icon: Home,
   },
   {
     name: "Resume",
-    href: "/resume",
+    href: "#",
     icon: FileUser,
+    onClick: (e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault();
+      window.open('/resume.pdf', '_blank');
+    },
   },
   {
     name: "Skills",
-    href: "/skills",
+    href: "#skills",
     icon: User,
   },
   {
     name: "Works",
-    href: "/works",
+    href: "#works",
     icon: Briefcase,
   },
   {
     name: "Contact",
-    href: "mailto:dev@nizamudheen.com",
+    href: "#contact",
     icon: Mail,
   },
 ]
@@ -47,6 +51,7 @@ export function BottomNav() {
             <Link
               key={item.name}
               href={item.href}
+              onClick={item.onClick}
               className={cn(
                 "flex flex-col items-center justify-center gap-1 px-3 py-2 text-xs font-medium transition-colors hover:text-primary",
                 isActive ? "text-primary" : "text-muted-foreground"
