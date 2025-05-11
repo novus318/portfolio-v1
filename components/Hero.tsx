@@ -27,7 +27,7 @@ const Hero = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 1, duration: 0.5 }}
                     >
-                        <Link href='#projects'>
+                        <Link href='#works'>
                             <MagicButton word={'Show my work'} position={'left'} icon={<ArrowBigRightDash className='w-5 h-5 text-primary'/>}/>
                         </Link>
                     </motion.div>

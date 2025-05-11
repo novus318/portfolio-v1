@@ -35,25 +35,29 @@ export function WebsiteContextMenu({ children }: { children: React.ReactNode }) 
       </ContextMenuTrigger>
       <ContextMenuContent className="w-64">
         <ContextMenuItem asChild>
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="#" className="flex items-center gap-2">
             <Home className="h-4 w-4 text-primary" />
             Home
           </Link>
         </ContextMenuItem>
         <ContextMenuItem asChild>
-          <Link href="/resume" className="flex items-center gap-2">
+          <Link href="#" 
+          onClick={() => {
+            window.open('/resume.pdf', '_blank');
+          }}
+          className="flex items-center gap-2">
             <FileUser className="h-4 w-4 text-primary" />
             Resume
           </Link>
         </ContextMenuItem>
         <ContextMenuItem asChild>
-          <Link href="/skills" className="flex items-center gap-2">
+          <Link href="#skills" className="flex items-center gap-2">
             <User className="h-4 w-4 text-primary" />
             Skills
           </Link>
         </ContextMenuItem>
         <ContextMenuItem asChild>
-          <Link href="/works" className="flex items-center gap-2">
+          <Link href="#works" className="flex items-center gap-2">
             <Briefcase className="h-4 w-4 text-primary" />
             Works
           </Link>
@@ -67,13 +71,13 @@ export function WebsiteContextMenu({ children }: { children: React.ReactNode }) 
           <Mail className="h-4 w-4 text-primary" />
           Email
         </ContextMenuItem>
-        <ContextMenuSeparator />
+        {/* <ContextMenuSeparator />
         <ContextMenuItem asChild>
           <Link href="/privacy" className="flex items-center gap-2">
             <Info className="h-4 w-4 text-primary" />
             Privacy Policy
           </Link>
-        </ContextMenuItem>
+        </ContextMenuItem> */}
       </ContextMenuContent>
     </ContextMenu>
   )
