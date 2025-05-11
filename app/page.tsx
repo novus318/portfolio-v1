@@ -45,7 +45,7 @@ const words = ["skills", "ability", "knowledge"];
     <main>
       <Hero/>
       <Grid/>
-      <div id="skills" className="text-start w-full max-w-4xl px-4 md:px-8 lg:px-20 mt-4 md:mt-10">
+      <div className="text-start w-full max-w-4xl px-4 md:px-8 lg:px-20 mt-4 md:mt-10">
 <div className="text-2xl md:text-4xl font-semibold">
         This is my
         <FlipWords words={words} />

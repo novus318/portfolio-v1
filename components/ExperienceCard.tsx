@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 
 interface Props {
+  id: any;
   title: string;
   description: string;
   dates: string;
@@ -17,6 +18,7 @@ interface Props {
 }
 
 export function ExperienceCard({
+  id,
   title,
   description,
   dates,
@@ -26,7 +28,7 @@ export function ExperienceCard({
   links,
 }: Props) {
   return (
-    <li className="relative ml-[2.3rem] py-4">
+    <li id={id} className="relative ml-[2.3rem] py-4">
       <div className="absolute -left-16 top-2 flex items-center justify-center rounded-full bg-white">
         <Avatar className="border size-12 m-auto">
           <AvatarImage src={image} alt={title} className="object-contain" />

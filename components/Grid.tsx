@@ -37,7 +37,7 @@ const Grid = () => {
       spareImg: theme === "dark" ? "/b4.svg" : "/b4-light.svg",
     },
     {
-      id: 4,
+      id: "skills",
       title: "Development",
       description: "end-to-end",
       className: "lg:col-span-2",
@@ -48,7 +48,7 @@ const Grid = () => {
     },
   ];
   return (
-    <section id="skills" className="px-4 md:px-8 lg:px-20">
+    <section className="px-4 md:px-8 lg:px-20">
       <BentoGrid className="w-full py-10">
         {gridItems.map((item, i) => (
           <BentoGridItem

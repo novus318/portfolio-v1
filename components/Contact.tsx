@@ -3,7 +3,7 @@ import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin, FaLocationArrow, FaWhats
 
 const Contact = () => {
   return (
-    <footer className="relative max-w-full px-4 md:px-8 lg:px-20 mt-7 md:mt-16 overflow-hidden">
+    <footer id="contact" className="relative max-w-full px-4 md:px-8 lg:px-20 mt-7 md:mt-16 overflow-hidden">
       <div className="w-full absolute h-full">
         <img
           src="/footer-grid.svg"
@@ -13,7 +13,7 @@ const Contact = () => {
       </div>
 
       <div className="flex relative z-20">
-        <h1 className="heading lg:max-w-[55vw] text-4xl md:text-7xl font-bold">
+        <h1 className="heading lg:max-w-[35vw] text-3xl sm:text-5xl font-bold">
           Connect me to take <span className="text-primary">your</span> ideas
            to the next level
         </h1>

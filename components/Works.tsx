@@ -8,6 +8,7 @@ const Works = () => {
     const DATA = {
         experiences: [
             {
+              id: 1,
               title: "Senior Frontend Developer",
               dates: "Jan 2025 - Present",
               location: "BLITE BREAL",
@@ -21,6 +22,7 @@ const Works = () => {
               }],
             },
             {
+              id: 2,
               title: "Full Stack Developer",
               dates: "Mar 2023 - Jan 2025",
               location: "Winndeal (UAE)",
@@ -36,6 +38,7 @@ const Works = () => {
               ],
             },
             {
+              id: "works",
               title: "Freelance Web Developer",
               dates: "2023",
               location: "Home Town",
@@ -71,6 +74,7 @@ const Works = () => {
               delay={BLUR_FADE_DELAY * 15 + id * 0.05}
             >
               <ExperienceCard
+                id={project.id}
                 title={project.title}
                 jobType={project.jobType}
                 description={project.description}
