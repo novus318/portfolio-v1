@@ -1,5 +1,5 @@
 'use client'
-import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin, FaLocationArrow, FaWhatsapp } from "react-icons/fa6";
+import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
 
 const Contact = () => {
   return (

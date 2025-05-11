@@ -1,10 +1,9 @@
 'use client'
-import Image from "next/image";
 import Hero from "@/components/Hero";
 import Grid from "@/components/Grid";
 import Contact from "@/components/Contact";
-import { FaCode, FaDatabase, FaLaptopCode, FaPython, FaDocker } from "react-icons/fa";
-import { SiCss3, SiExpress, SiGit, SiMongodb, SiNextdotjs, SiNodedotjs, SiReact, SiRedux, SiTailwindcss, SiFastapi, SiPostgresql, SiVite, SiTypescript, SiJest, SiAmazon, SiRedis } from "react-icons/si";
+import { FaLaptopCode, FaPython, FaDocker } from "react-icons/fa";
+import { SiExpress, SiGit, SiMongodb, SiNextdotjs, SiNodedotjs, SiReact, SiRedux, SiTailwindcss, SiFastapi, SiPostgresql, SiVite, SiTypescript, SiRedis } from "react-icons/si";
 import { FlipWords } from "@/components/magicui/flip-words";
 import { HoverEffect } from "@/components/magicui/card-hover-effect";
 import Education from "@/components/Education";

@@ -1,6 +1,6 @@
 import React from 'react'
 import { BlurFade } from './magicui/blur-fade';
-import { FaGithub, FaGlobe, FaYoutube } from 'react-icons/fa';
+import { FaGlobe } from 'react-icons/fa';
 import { ExperienceCard } from './ExperienceCard';
 
 const Works = () => {
@@ -61,7 +61,7 @@ const Works = () => {
               Professional <span className="text-primary">Journey</span>
             </h2>
             <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              With {3}+ years of experience in software development, I've had the opportunity to work on various projects and collaborate with talented teams. My journey includes participating in events and building innovative solutions.
+              With {3}+ years of experience in software development, I&apos;ve had the opportunity to work on various projects and collaborate with talented teams. My journey includes participating in events and building innovative solutions.
             </p>
           </div>
         </div>

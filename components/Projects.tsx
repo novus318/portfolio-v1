@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { BlurFade } from './magicui/blur-fade'
 import { ProjectCard } from './project-card';
 import { FaGithub, FaGlobe } from 'react-icons/fa';
-import { Button } from './ui/button';
 import { InteractiveHoverButton } from './magicui/interactive-hover-button';
 
 const Projects = () => {

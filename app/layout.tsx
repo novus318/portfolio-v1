@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ThemeContextProvider, { ColorTheme, Theme } from "@/context/ThemeContext";
 import { cookies } from "next/headers";
-import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { WebsiteContextMenu } from "@/components/WebsiteContextMenu";
 import { BottomNav } from "@/components/BottomNav";
 import { TopNav } from "@/components/TopNav";

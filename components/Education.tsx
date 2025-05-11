@@ -1,4 +1,4 @@
-import Image from 'next/image'
+'use client'
 import React from 'react'
 import { FlipWords } from './magicui/flip-words';
 import { BoxReveal } from './magicui/box-reveal';
