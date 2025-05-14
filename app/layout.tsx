@@ -3,9 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ThemeContextProvider, { ColorTheme, Theme } from "@/context/ThemeContext";
 import { cookies } from "next/headers";
-import { WebsiteContextMenu } from "@/components/WebsiteContextMenu";
-import { BottomNav } from "@/components/BottomNav";
-import { TopNav } from "@/components/TopNav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,18 +16,41 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Muhammed Nizamudheen | Software developer",
-  description: "Self-directed full-stack developer proficient in creating innovative web solutions. Skilled in both frontend and backend development with a creative approach to problem-solving. Also passionate about creating customised solutions for my clients.",
-  keywords:'nizamudheen,Muhammed Nizamudheen,web developer,web development,software,software engineer',
+  description: "Self-directed full-stack developer proficient in creating innovative web solutions. Skilled in both frontend and backend development with a creative approach to problem-solving.",
+  keywords: 'nizamudheen,Muhammed Nizamudheen,web developer,software engineer,portfolio',
   metadataBase: new URL('https://nizamudheen.com'),
   alternates: {
     canonical: '/',
-    languages: {
-      'en-US': '/en-US',
-      'de-DE': '/de-DE',
-    },
   },
   openGraph: {
-    images: '/opengraph-image.png',
+    title: "Muhammed Nizamudheen | Software developer",
+    description: "Self-directed full-stack developer proficient in creating innovative web solutions.",
+    url: 'https://nizamudheen.com',
+    siteName: 'Nizamudheen Portfolio',
+    images: [
+      {
+        url: '/opengraph-image.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    }
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Muhammed Nizamudheen | Software developer",
+    description: "Self-directed full-stack developer proficient in creating innovative web solutions.",
+    creator: '@nizamudheen',
+    images: ['https://nizamudheen.com/opengraph-image.png'],
   },
 };
 
@@ -67,15 +87,9 @@ export default async function RootLayout({
         data-color-theme={initialColorTheme}
       >
         <ThemeContextProvider initialTheme={initialTheme} initialColorTheme={initialColorTheme}>
-          <WebsiteContextMenu>
-            <TopNav />
-            <div className="fixed right-4 top-20 z-50 md:top-20">
-            </div>
             <main className="min-h-screen pt-16 pb-16 md:pb-0">
               {children}
             </main>
-            <BottomNav />
-          </WebsiteContextMenu>
         </ThemeContextProvider>
       </body>
     </html>

@@ -73,6 +73,15 @@ input[type=number]::-webkit-outer-spin-button {
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --animate-pulse: pulse var(--duration) ease-out infinite;
+  @keyframes pulse {
+  0%, 100% {
+    boxShadow: 0 0 0 0 var(--pulse-color);
+    }
+  50% {
+    boxShadow: 0 0 0 8px var(--pulse-color);
+    }
+  }
 }
 
 :root {           /* oklch(0, 0%, 95%) - Very light neutral gray */           /* oklch(0, 0%, 15%) - Dark gray for text */

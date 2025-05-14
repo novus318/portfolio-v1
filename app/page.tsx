@@ -1,4 +1,3 @@
-'use client'
 import Hero from "@/components/Hero";
 import Grid from "@/components/Grid";
 import Contact from "@/components/Contact";
@@ -9,8 +8,14 @@ import { HoverEffect } from "@/components/magicui/card-hover-effect";
 import Education from "@/components/Education";
 import Works from "@/components/Works";
 import Projects from "@/components/Projects";
+import { WebsiteContextMenu } from "@/components/WebsiteContextMenu";
+import { TopNav } from "@/components/TopNav";
+import { BottomNav } from "@/components/BottomNav";
+import Blog from "@/components/Blog";
+import RoadMaps from "@/components/RoadMaps";
 
 export default function Home() {
+
   const skills = [
     // Frontend
     { id: 1, title: 'React', icon: <SiReact /> },
@@ -41,6 +46,8 @@ export default function Home() {
 
 const words = ["skills", "ability", "knowledge"];
   return (
+    <WebsiteContextMenu>
+            <TopNav />
     <main>
       <Hero/>
       <Grid/>
@@ -56,7 +63,11 @@ const words = ["skills", "ability", "knowledge"];
     <Education/>
     <Works/>
     <Projects/>
-      <Contact/>
+    <Blog/>
+    <RoadMaps/>
+    <Contact/>
     </main>
+    <BottomNav />
+    </WebsiteContextMenu>
   );
 }

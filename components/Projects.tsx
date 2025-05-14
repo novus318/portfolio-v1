@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from 'react'
 import { BlurFade } from './magicui/blur-fade'
 import { ProjectCard } from './project-card';
@@ -11,10 +12,9 @@ const Projects = () => {
         projects: [
           {
             title: "Rental Management System",
-            href: "https://vellapmahal.in",
+            href: "https://www.momenz.in/",
             active: true,
-            description:
-              "streamlines Jamaath operations with an interface, designed to help you manage your accounts, members, and staff and Payments with ease.",
+            description: "System that helps manage inventory and take pre-orders and convert them to orders with a stunning dashboard that can switch between different themes.",
             technologies: [
               "Next.js",
               "Node.js",
@@ -22,19 +22,19 @@ const Projects = () => {
               "MongoDB",
               "Typescript",
               "TailwindCSS",
-              "Whatsapp API",
-              "Razorpay"
+              "Radix UI",
+              "R2 bucket"
             ],
             links: [
               {
                 type: "Website",
-                href: "https://vellapmahal.in",
+                href: "https://www.momenz.in/",
                 icon: <FaGlobe className="size-3" />,
               }
             ],
             image: "",
             video:
-              "1https://pub-3840d435126b4ae082be2973bc27befb.r2.dev/8.mp4",
+              "https://pub-3840d435126b4ae082be2973bc27befb.r2.dev/Untitled.mov",
           },
           {
             title: "Jamath Management System",
