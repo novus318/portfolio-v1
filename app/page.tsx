@@ -11,7 +11,6 @@ import Projects from "@/components/Projects";
 import { WebsiteContextMenu } from "@/components/WebsiteContextMenu";
 import { TopNav } from "@/components/TopNav";
 import { BottomNav } from "@/components/BottomNav";
-import Blog from "@/components/Blog";
 import RoadMaps from "@/components/RoadMaps";
 
 export default function Home() {
@@ -63,7 +62,6 @@ const words = ["skills", "ability", "knowledge"];
     <Education/>
     <Works/>
     <Projects/>
-    <Blog/>
     <RoadMaps/>
     <Contact/>
     </main>

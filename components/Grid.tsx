@@ -1,10 +1,8 @@
 'use client'
 
-import { useTheme } from "@/hooks/useTheme";
 import { BentoGrid, BentoGridItem } from "./magicui/bento-grid";
 
 const Grid = () => {
-  const { theme } = useTheme();
   const gridItems = [
     {
       id: 1,
@@ -13,7 +11,7 @@ const Grid = () => {
       className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh] min-h-[25vh]",
       imgClassName: "w-full h-full opacity-75",
       titleClassName: "justify-end max-w-[70%] mt-16 md:mt-0 md:justify-end md:max-w-[75%]",
-      img: theme === "dark" ? "/1.png" : "/2.png",
+      img: "/2.png",
       spareImg: "",
     },
     {
@@ -34,7 +32,7 @@ const Grid = () => {
       imgClassName: "",
       titleClassName: "justify-start",
       img: "",
-      spareImg: theme === "dark" ? "/b4.svg" : "/b4-light.svg",
+      spareImg: "/b4-light.svg",
     },
     {
       id: "skills",
@@ -43,7 +41,7 @@ const Grid = () => {
       className: "lg:col-span-2",
       imgClassName: "absolute right-0 bottom-0 md:w-86 w-56",
       titleClassName: "justify-end",
-      img: theme === "dark" ? "/b5.svg" : "/b5-light.png",
+      img: "/b5-light.png",
       spareImg: "",
     },
   ];

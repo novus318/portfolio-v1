@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import ThemeContextProvider, { ColorTheme, Theme } from "@/context/ThemeContext";
-import { cookies } from "next/headers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -54,19 +52,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const cookieStore = await cookies();
-  const initialTheme = (cookieStore.get("theme")?.value as Theme) || "light";
-  const initialColorTheme = (cookieStore.get("colorTheme")?.value as ColorTheme) || "zinc";
-
-  const isDarkMode =
-    initialTheme === "dark" ||
-    (initialTheme === "system" && false); // Update this to use system preference
-
   return (
     <html lang="en" suppressHydrationWarning>
            <head>
@@ -82,15 +72,10 @@ export default async function RootLayout({
         <meta name="twitter:description" content='Self-directed full-stack developer proficient in creating innovative web solutions. Skilled in both frontend and backend development with a creative approach to problem-solving. Also passionate about creating customised solutions for my clients.' />
         <meta name="twitter:image" content='https://nizamudheen.com/opengraph-image.png' />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased ${isDarkMode ? "dark" : ""}`}
-        data-color-theme={initialColorTheme}
-      >
-        <ThemeContextProvider initialTheme={initialTheme} initialColorTheme={initialColorTheme}>
-            <main className="min-h-screen pt-16 pb-16 md:pb-0">
-              {children}
-            </main>
-        </ThemeContextProvider>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <main className="min-h-screen pt-16 pb-16 md:pb-0">
+          {children}
+        </main>
       </body>
     </html>
   );

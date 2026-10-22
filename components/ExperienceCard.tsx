@@ -29,7 +29,7 @@ export function ExperienceCard({
 }: Props) {
   return (
     <li id={id} className="relative ml-[2.3rem] py-4">
-      <div className="absolute -left-16 top-2 flex items-center justify-center rounded-full bg-white">
+      <div className="absolute -left-16 top-2 flex items-center justify-center rounded-full bg-background">
         <Avatar className="border size-12 m-auto">
           <AvatarImage src={image} alt={title} className="object-contain" />
           <AvatarFallback>{title[0]}</AvatarFallback>
@@ -51,7 +51,7 @@ export function ExperienceCard({
           )}
         </div>
         {description && (
-          <span className="prose dark:prose-invert text-sm text-muted-foreground">
+          <span className="prose text-sm text-muted-foreground">
             {description}
           </span>
         )}

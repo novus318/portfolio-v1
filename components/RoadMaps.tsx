@@ -2,7 +2,7 @@ import React from 'react'
 
 const RoadMaps = () => {
   return (
-    <section className="relative overflow-hidden max-w-full px-4 md:px-8 lg:px-20 mt-7 md:mt-16 bg-radial-[at_3000%] from-background via-primary/10 to-background dark:bg-radial-[at_3000%] dark:from-background dark:via-secondary-foreground/10 dark:to-background">
+    <section className="relative overflow-hidden max-w-full px-4 md:px-8 lg:px-20 mt-7 md:mt-16 bg-gradient-to-b from-background via-secondary/40 to-background">
     <div className="relative">
       <div className="md:mb-16 mb-8">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
