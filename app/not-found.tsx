@@ -16,12 +16,15 @@ const NotFound = () => {
   }, [navigate]);
 
   return (
-    <div className="flex min-h-[80vh] flex-col items-center justify-center bg-black-200 px-4 py-12">
-      <div className="mx-auto max-w-md">
-        <h1 className="text-4xl font-bold tracking-tight text-white-100 sm:text-5xl">
+    <div className="flex min-h-[80vh] flex-col items-center justify-center bg-background px-4 py-12">
+      <div className="mx-auto max-w-md rounded-3xl border border-border bg-card p-8 md:p-10">
+        <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+          404
+        </span>
+        <h1 className="mt-4 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
          <span className='text-primary'>Oops!</span> <br />Page not found.
         </h1>
-        <p className="mt-4 text-xs md:text-sm">
+        <p className="mt-4 text-xs text-muted-foreground md:text-sm">
           The page you are looking for does not exist or has been moved.
         </p>
         <motion.div 

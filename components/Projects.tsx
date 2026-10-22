@@ -254,23 +254,27 @@ const Projects = () => {
         }
 
   return (
-       <section className="max-w-full px-4 md:px-8 lg:px-20 mt-7 md:mt-16">
-    <div className="py-5 md:py-8">
+    <section id="projects" className="mx-auto max-w-7xl scroll-mt-20 px-4 py-16 md:px-8 md:py-24 lg:px-12">
+      <div className="flex items-center gap-4">
+        <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+          05 / Selected work
+        </span>
+        <span className="h-px flex-1 bg-border" />
+      </div>
+
       <BlurFade delay={BLUR_FADE_DELAY * 11}>
-        <div className="flex items-center space-y-4 mb-4 md:mb-8">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-              Check out my <span className="text-primary">latest</span> work
-            </h2>
-            <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              I&apos;ve worked on a variety of projects, from simple
-              websites to complex web applications. Here are a few of my
-              favorites.
-            </p>
-          </div>
+        <div className="mt-10 max-w-2xl space-y-4">
+          <h2 className="text-3xl font-semibold tracking-[-0.035em] text-foreground md:text-5xl">
+            Check out my <span className="text-primary">latest</span> work
+          </h2>
+          <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
+            I&apos;ve worked on a variety of projects, from simple websites to
+            complex web applications. Here are a few of my favorites.
+          </p>
         </div>
       </BlurFade>
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 relative">
+
+      <div className="relative mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {(showAll ? DATA.projects : DATA.projects.slice(0, 3)).map((project, id) => (
           <BlurFade
             key={project.title}
@@ -289,18 +293,20 @@ const Projects = () => {
           </BlurFade>
         ))}
         {!showAll && DATA.projects.length > 3 && (
-          <div className="absolute inset-0 pointer-events-none">
+          <div className="pointer-events-none absolute inset-0">
             <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background via-background/70 to-transparent" />
           </div>
         )}
       </div>
+
       {!showAll && DATA.projects.length > 3 && (
-        <div className="relative w-full flex justify-center bg-background py-4">
-          <InteractiveHoverButton className="relative z-10 group" onClick={() => setShowAll(true)}>See more..</InteractiveHoverButton>
+        <div className="relative mt-10 flex w-full justify-center">
+          <InteractiveHoverButton className="relative z-10 group" onClick={() => setShowAll(true)}>
+            See more
+          </InteractiveHoverButton>
         </div>
       )}
-    </div>
-  </section>
+    </section>
   )
 }
 

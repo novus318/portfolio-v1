@@ -53,43 +53,48 @@ const Works = () => {
         }
 
   return (
-    <section className="max-w-full px-4 md:px-8 lg:px-20 mt-7 md:mt-16">
-    <div className="space-y-12 w-full py-12">
-      <BlurFade delay={BLUR_FADE_DELAY * 13}>
-        <div className="flex flex-col items-center justify-center space-y-4">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-              Professional <span className="text-primary">Journey</span>
-            </h2>
-            <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              With {3}+ years of experience in software development, I&apos;ve had the opportunity to work on various projects and collaborate with talented teams. My journey includes participating in events and building innovative solutions.
-            </p>
-          </div>
-        </div>
-      </BlurFade>
-      <BlurFade delay={BLUR_FADE_DELAY * 14}>
-        <ul className="mb-4 ml-4 divide-y-2 divide-dashed border-l-4">
-          {DATA.experiences.map((project, id) => (
-            <BlurFade
-              key={project.title + project.dates}
-              delay={BLUR_FADE_DELAY * 15 + id * 0.05}
-            >
-              <ExperienceCard
-                id={project.id}
-                title={project.title}
-                jobType={project.jobType}
-                description={project.description}
-                location={project.location}
-                dates={project.dates}
-                image={project.image}
-                links={project.links}
-              />
-            </BlurFade>
-          ))}
-        </ul>
-      </BlurFade>
-    </div>
-  </section>
+    <section id="experience" className="mx-auto max-w-7xl scroll-mt-20 px-4 py-16 md:px-8 md:py-24 lg:px-12">
+      <div className="flex items-center gap-4">
+        <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+          04 / Experience
+        </span>
+        <span className="h-px flex-1 bg-border" />
+      </div>
+
+      <div className="mt-10 grid gap-8 lg:grid-cols-12 lg:gap-16">
+        <BlurFade delay={BLUR_FADE_DELAY * 13} className="lg:col-span-4">
+          <h2 className="text-3xl font-semibold tracking-[-0.035em] text-foreground md:text-5xl">
+            Professional <span className="text-primary">journey</span>
+          </h2>
+          <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground md:text-base">
+            With 3+ years of experience in software development, I&apos;ve worked
+            on products across e-commerce, healthcare, and local business tools.
+          </p>
+        </BlurFade>
+
+        <BlurFade delay={BLUR_FADE_DELAY * 14} className="lg:col-span-8">
+          <ul className="border-l border-border pl-8">
+            {DATA.experiences.map((project, id) => (
+              <BlurFade
+                key={project.title + project.dates}
+                delay={BLUR_FADE_DELAY * 15 + id * 0.05}
+              >
+                <ExperienceCard
+                  id={project.id}
+                  title={project.title}
+                  jobType={project.jobType}
+                  description={project.description}
+                  location={project.location}
+                  dates={project.dates}
+                  image={project.image}
+                  links={project.links}
+                />
+              </BlurFade>
+            ))}
+          </ul>
+        </BlurFade>
+      </div>
+    </section>
   )
 }
 

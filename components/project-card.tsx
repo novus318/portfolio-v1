@@ -9,6 +9,7 @@ import {
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import Markdown from "react-markdown";
 
 interface Props {
@@ -43,13 +44,16 @@ export function ProjectCard({
   return (
     <Card
       className={
-        "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full !pt-0 !pb-3 !gap-3"
+        "group flex h-full flex-col gap-3 overflow-hidden border transition-all duration-300 ease-out hover:border-primary/40 hover:shadow-lg !pt-0 !pb-3"
       }
     >
       <Link
         href={href || "#"}
-        className={cn("block cursor-pointer", className)}
+        className={cn("relative block cursor-pointer", className)}
       >
+        <span className="absolute right-3 top-3 z-10 grid size-8 translate-y-1 place-items-center rounded-full bg-accent text-accent-foreground opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+          <ArrowUpRight className="size-4" />
+        </span>
         {video && (
      <div className="w-full object-cover object-top bg-secondary [&:not(:has(video:playing))]:pt-6 [&:not(:has(video:playing))]:pb-2 [&:not(:has(video:playing))]:px-4">
            <video

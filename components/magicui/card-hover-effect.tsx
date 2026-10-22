@@ -26,7 +26,7 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-2 md:grid-cols-2  lg:grid-cols-4 gap-1.5",
+        "grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2",
         className
       )}
     >
@@ -40,7 +40,7 @@ export const HoverEffect = ({
           <AnimatePresence>
             {hoveredIndex === id && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-primary/10 block  rounded-xl"
+                className="absolute inset-0 block h-full w-full rounded-2xl bg-accent/40"
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -73,7 +73,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "skills rounded-xl h-full w-full p-1 md:p-4 overflow-hidden bg-secondary border border-transparent group-hover:border-primary/30 relative z-20",
+        "skills relative z-20 h-full w-full overflow-hidden rounded-2xl border border-border bg-card p-1 transition-all duration-300 group-hover:border-primary/40 group-hover:shadow-md md:p-4",
         className
       )}
     >
@@ -94,8 +94,8 @@ export const CardTitle = ({
 }) => {
   return (
     <h4 className={cn("flex items-center", className)}>
-      <span className="text-xl md:text-2xl lg:text-3xl mr-3 text-primary">{icon}</span>
-      <p className="text-sm md:text-base lg:text-lg font-semibold">{children}</p>
+      <span className="mr-3 text-xl text-primary md:text-2xl lg:text-3xl">{icon}</span>
+      <p className="text-sm font-semibold text-foreground md:text-base lg:text-lg">{children}</p>
     </h4>
   );
 }

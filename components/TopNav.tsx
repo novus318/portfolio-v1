@@ -27,7 +27,7 @@ const navItems = [
   },
   {
     name: "Works",
-    href: "#works",
+    href: "#projects",
     icon: Briefcase,
   },
   {
@@ -41,34 +41,30 @@ export function TopNav() {
   const pathname = usePathname()
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40 border-b bg-background/95 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-end">
-          <div className="hidden md:flex items-center space-x-1">
-            {navItems.map((item) => {
-              const isActive = pathname === item.href
-              const Icon = item.icon
-              
-              return (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  onClick={item.onClick}
-                  className={cn(
-                    "flex items-center gap-2 px-3 py-2 text-sm font-medium transition-colors hover:text-primary rounded-md",
-                    isActive 
-                      ? "text-primary bg-primary/10" 
-                      : "text-muted-foreground hover:bg-primary/5"
-                  )}
-                >
-                  <Icon className="h-4 w-4" />
-                  <span>{item.name}</span>
-                </Link>
-              )
-            })}
-          </div>
+    <nav className="fixed top-0 left-0 right-0 z-40 border-b border-border bg-background/80 backdrop-blur-xl">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-8 lg:px-12">
+
+        <div className="hidden items-center gap-1 md:flex">
+          {navItems.map((item) => {
+            const isActive = pathname === item.href
+
+            return (
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={item.onClick}
+                className={cn(
+                  "group relative px-3 py-2 text-sm font-medium transition-colors hover:text-foreground",
+                  isActive ? "text-foreground" : "text-muted-foreground"
+                )}
+              >
+                {item.name}
+                <span className="absolute inset-x-3 -bottom-px h-0.5 origin-left scale-x-0 bg-accent transition-transform duration-300 group-hover:scale-x-100" />
+              </Link>
+            )
+          })}
         </div>
       </div>
     </nav>
   )
-} 
+}

@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import Grid from "@/components/Grid";
 import Contact from "@/components/Contact";
+import FeaturedProject from "@/components/FeaturedProject";
 import { FaLaptopCode, FaPython, FaDocker } from "react-icons/fa";
 import { SiExpress, SiGit, SiMongodb, SiNextdotjs, SiNodedotjs, SiReact, SiRedux, SiTailwindcss, SiFastapi, SiPostgresql, SiVite, SiTypescript, SiRedis } from "react-icons/si";
 import { FlipWords } from "@/components/magicui/flip-words";
@@ -46,26 +47,33 @@ export default function Home() {
 const words = ["skills", "ability", "knowledge"];
   return (
     <WebsiteContextMenu>
-            <TopNav />
-    <main>
-      <Hero/>
-      <Grid/>
-      <div className="text-start w-full max-w-4xl px-4 md:px-8 lg:px-20 mt-4 md:mt-10">
-<div className="text-2xl md:text-4xl font-semibold">
-        This is my
-        <FlipWords words={words} />
-      </div>
-</div>
-<div className="max-w-full px-4 md:px-8 lg:px-20 mt-2 md:mt-4">
-      <HoverEffect items={skills} />
-    </div>
-    <Education/>
-    <Works/>
-    <Projects/>
-    <RoadMaps/>
-    <Contact/>
-    </main>
-    <BottomNav />
+      <TopNav />
+      <main>
+        <Hero />
+        <FeaturedProject />
+        <Grid />
+        <section id="skills" className="mx-auto max-w-7xl scroll-mt-20 px-4 py-16 md:px-8 md:py-24 lg:px-12">
+          <div className="flex items-center gap-4">
+            <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+              03 / Skills
+            </span>
+            <span className="h-px flex-1 bg-border" />
+          </div>
+          <div className="mt-10 overflow-x-hidden text-3xl font-semibold tracking-[-0.03em] text-foreground md:text-4xl lg:text-5xl">
+            This is my
+            <FlipWords words={words} className="text-primary" />
+          </div>
+          <div className="mt-6">
+            <HoverEffect items={skills} />
+          </div>
+        </section>
+        <Works />
+        <Projects />
+        <Education />
+        <RoadMaps />
+        <Contact />
+      </main>
+      <BottomNav />
     </WebsiteContextMenu>
   );
 }

@@ -1,69 +1,99 @@
-'use client'
+import { ArrowUpRight } from "lucide-react"
 
-import { BentoGrid, BentoGridItem } from "./magicui/bento-grid";
+const stack = ["React", "Next.js", "TypeScript", "Node.js", "Express", "MongoDB", "PostgreSQL", "Tailwind CSS"]
 
 const Grid = () => {
-  const gridItems = [
-    {
-      id: 1,
-      title: "Think different. Build better.",
-      description: "",
-      className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh] min-h-[25vh]",
-      imgClassName: "w-full h-full opacity-75",
-      titleClassName: "justify-end max-w-[70%] mt-16 md:mt-0 md:justify-end md:max-w-[75%]",
-      img: "/2.png",
-      spareImg: "",
-    },
-    {
-      id: 2,
-      title: "Technical Expertise",
-      description: "I improve",
-      className: "lg:col-span-2 md:col-span-3 md:row-span-2",
-      imgClassName: "",
-      titleClassName: "justify-center",
-      img: "",
-      spareImg: "",
-    },
-    {
-      id: 3,
-      title: "Experienced in both frontend and backend development",
-      description: "",
-      className: "lg:col-span-2 md:col-span-3 md:row-span-1",
-      imgClassName: "",
-      titleClassName: "justify-start",
-      img: "",
-      spareImg: "/b4-light.svg",
-    },
-    {
-      id: "skills",
-      title: "Development",
-      description: "end-to-end",
-      className: "lg:col-span-2",
-      imgClassName: "absolute right-0 bottom-0 md:w-86 w-56",
-      titleClassName: "justify-end",
-      img: "/b5-light.png",
-      spareImg: "",
-    },
-  ];
   return (
-    <section className="px-4 md:px-8 lg:px-20">
-      <BentoGrid className="w-full py-10">
-        {gridItems.map((item, i) => (
-          <BentoGridItem
-            id={item.id}
-            key={i}
-            title={item.title}
-            description={item.description}
-            className={item.className}
-            img={item.img}
-            imgClassName={item.imgClassName}
-            titleClassName={item.titleClassName}
-            spareImg={item.spareImg}
-          />
-        ))}
-      </BentoGrid>
-    </section>
-  );
-};
+    <section id="about" className="mx-auto max-w-7xl scroll-mt-20 px-4 py-16 md:px-8 md:py-24 lg:px-12">
+      <div className="flex items-center gap-4">
+        <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+          02 / About
+        </span>
+        <span className="h-px flex-1 bg-border" />
+      </div>
 
-export default Grid;
+      <div className="mt-10 grid gap-4 md:grid-cols-6">
+        <div className="rounded-3xl border border-border bg-card p-8 md:col-span-4 md:p-10">
+          <span className="inline-flex items-center gap-2 rounded-full bg-accent px-3 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-accent-foreground">
+            <span className="size-1.5 rounded-full bg-accent-foreground" />
+            About me
+          </span>
+          <h2 className="mt-6 max-w-2xl text-3xl font-semibold tracking-[-0.035em] text-foreground md:text-4xl lg:text-5xl">
+            I turn complex problems into clean, useful products.
+          </h2>
+          <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
+            I&apos;m Muhammed Nizamudheen, a full-stack developer and product builder.
+            I care about the whole experience — from the architecture underneath to
+            the small interaction that makes a product feel considered.
+          </p>
+        </div>
+
+        <div className="flex flex-col justify-between rounded-3xl bg-foreground p-8 text-background md:col-span-2">
+          <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-background/60">
+            Currently
+          </span>
+          <div>
+            <h3 className="text-2xl font-semibold tracking-tight">
+              Building{' '}
+              <a
+                href="https://gohublink.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-accent"
+              >
+                goHublink
+              </a>
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-background/70">
+              An offline customer acquisition network for local businesses.
+            </p>
+          </div>
+          <div className="mt-10 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-background/60">
+            <span className="size-2 rounded-full bg-accent" />
+            In progress
+          </div>
+        </div>
+
+        <div className="rounded-3xl border border-border bg-card p-8 md:col-span-3">
+          <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+            The stack
+          </span>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {stack.map((item) => (
+              <span
+                key={item}
+                className="rounded-full bg-secondary px-3 py-1.5 text-xs font-medium text-secondary-foreground"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex flex-col justify-between rounded-3xl border border-border bg-card p-8 md:col-span-3">
+          <div>
+            <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+              Based in
+            </span>
+            <h3 className="mt-4 text-2xl font-semibold tracking-tight text-foreground">
+              India · Remote worldwide
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              GMT+5:30 · Open to full-time and freelance collaborations.
+            </p>
+          </div>
+          <a
+            href="#contact"
+            className="group mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary"
+          >
+            <span className="size-2 rounded-full bg-accent" />
+            Available for work
+            <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default Grid

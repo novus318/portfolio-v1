@@ -57,7 +57,7 @@ export function WebsiteContextMenu({ children }: { children: React.ReactNode }) 
           </Link>
         </ContextMenuItem>
         <ContextMenuItem asChild>
-          <Link href="#works" className="flex items-center gap-2">
+          <Link href="#projects" className="flex items-center gap-2">
             <Briefcase className="h-4 w-4 text-primary" />
             Works
           </Link>

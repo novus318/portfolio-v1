@@ -28,39 +28,46 @@ export function ExperienceCard({
   links,
 }: Props) {
   return (
-    <li id={id} className="relative ml-[2.3rem] py-4">
-      <div className="absolute -left-16 top-2 flex items-center justify-center rounded-full bg-background">
-        <Avatar className="border size-12 m-auto">
+    <li id={id} className="relative scroll-mt-24 py-5">
+      <div className="absolute -left-12 top-5 grid size-8 place-items-center rounded-full border border-border bg-background">
+        <Avatar className="size-6">
           <AvatarImage src={image} alt={title} className="object-contain" />
-          <AvatarFallback>{title[0]}</AvatarFallback>
+          <AvatarFallback className="text-[10px]">{title[0]}</AvatarFallback>
         </Avatar>
       </div>
-      <div className="flex flex-1 flex-col justify-start gap-1">
-        {dates && (
-          <time className="text-xs text-muted-foreground">{dates}</time>
-        )}
-        <h2 className="font-semibold leading-none">{title}</h2>
-        <div className="flex items-center gap-2">
+
+      <div className="flex flex-col gap-2">
+        <time className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+          {dates}
+        </time>
+        <h2 className="text-lg font-semibold tracking-tight text-foreground">{title}</h2>
+        <div className="flex flex-wrap items-center gap-2">
           {location && (
             <p className="text-sm text-muted-foreground">{location}</p>
           )}
           {jobType && (
-            <span className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary">
+            <span className="rounded-full bg-accent px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-accent-foreground">
               {jobType}
             </span>
           )}
         </div>
         {description && (
-          <span className="prose text-sm text-muted-foreground">
+          <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
             {description}
-          </span>
+          </p>
         )}
       </div>
+
       {links && links.length > 0 && (
-        <div className="mt-2 flex flex-row flex-wrap items-start gap-2">
+        <div className="mt-3 flex flex-row flex-wrap items-start gap-2">
           {links?.map((link, idx) => (
             <Link href={link.href} target="_blank" key={idx}>
-              <Badge key={idx} title={link.title} className="flex gap-2">
+              <Badge
+                key={idx}
+                title={link.title}
+                variant="outline"
+                className="flex gap-2 bg-card transition-colors hover:border-primary hover:text-primary"
+              >
                 {link.icon}
                 {link.title}
               </Badge>
